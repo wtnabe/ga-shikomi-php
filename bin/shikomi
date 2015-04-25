@@ -1,0 +1,6 @@
+#! /usr/bin/env php
+<?php // -*- mode: php -*-
+require_once dirname(__FILE__).'/../vendor/autoload.php';
+require_once dirname(__FILE__).'/../src/wtnabe/ga-shikomi.php';
+
+(new GAShikomi\App())->run();

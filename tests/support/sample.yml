@@ -1,0 +1,2 @@
+metrics: ga:pageviews
+dimensions: ga:pagePath

@@ -44,8 +44,9 @@ class Api
 
     function _auth()
     {
-        $storage = new FileStorage($this->config);
-        $this->client->setAuthConfigFile($storage->secrets);
+        $storage = Storage::factory($this->config);
+        $this->client->setAuthConfig($storage->loadSecrets());
+
         $this->client->addScope(\Google_Service_Analytics::ANALYTICS,
                                 \Google_Service_Analytics::ANALYTICS_EDIT);
 

@@ -8,6 +8,7 @@
       "email": "wtnabe@gmail.com"
     }
   ],
+  "bin": ["bin/shikomi"],
   "require": {
     "google/apiclient": "1.0.*@beta",
     "symfony/console": "2.6.6",

@@ -1,7 +1,16 @@
 #! /usr/bin/env php
 <?php // -*- mode: php -*-
 if ( !@include_once(dirname(__FILE__).'/../vendor/autoload.php') ) {
-  include_once(dirname($_SERVER['SCRIPT_FILENAME']).'/../autoload.php');
+  $dir   = dirname(dirname(dirname(__FILE__)));
+
+  while ( !in_array('composer.json', array_map('basename', glob("{$dir}/*")) ) ) {
+    if ( in_array('autoload.php', array_map('basename', glob("{$dir}/*"))) ) {
+      include_once($dir.'/autoload.php');
+      break;
+    } else {
+      $dir = dirname($dir);
+    }
+  }
 }
 
 require_once dirname(__FILE__).'/../src/wtnabe/ga-shikomi.php';
